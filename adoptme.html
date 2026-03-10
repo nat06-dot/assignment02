@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptme form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>/* สไตล์สำหรับกล่อง Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); z-index: 1000;
+        }
+        .popup-box {
+            background-color: white; margin: 15% auto; padding: 30px;
+            border-radius: 15px; width: 80%; max-width: 400px;
+            text-align: center; border: 5px solid #28a745;
+        }
+        .popup-btn {
+            background-color: #28a745; color: white; border: none;
+            padding: 10px 25px; font-size: 18px; border-radius: 8px;
+            cursor: pointer; font-family: 'Itim', cursive; margin-top: 20px;
+        }</style>
+
+</head>
+
+<body style="background-color:  rgb(173, 242, 113);">
+
+    
+    <head>
+        <h1 style="font-family: cursive; background-color: green; 
+        color: white;
+        padding: 20px 25px;
+        border-radius: 1.5cm; 
+        display:-webkit-inline-box;
+        font-size: 32;
+         border: 0.3cm solid yellowgreen;">Adopt a pet</h1>
+    </head><br>
+    <form name="Apodtme" method="post" margin-top: 50px
+        onsubmit="showPopup(event)"
+        style="
+    background-color: white; 
+    display:inline-block;
+    border-radius: 1cm;
+    padding: 20px 30px;">
+        <label for="name">Fist name:</label>
+        <input type="text" id="First_name" name="user_Firstname" required placeholder="Your firstname"><br><br>
+
+        <label for="name">Last name:</label>
+        <input type="text" id="Last_name" name="user_Lastname" required placeholder="Your lastname"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="Email" id="user_email" required placeholder="Your email"><br><br>
+
+        <label for="Information">Address</label>
+        <input type="text" name="Address" id="user_adsress" required placeholder="address"><br><br>
+
+        <label for="Accommodation type">Accommodation type</label>
+        <select name="Accommodation_type" id="user_Accommodation_type">
+            <option value="garden house">garden house</option>
+            <option value="Single house">Single house</option>
+            <option value="Townhouses">Townhouses</option>
+            <option value="Condominium/Dormitory">Condominium/Dormitory</option>
+        </select><br>
+        <h4>Where will you keep your pets?</h4>
+        <input type="radio" name="keep_location" value="indoors" required>
+        <label for="indoors">Keeping dogs indoors.</label>
+
+        <input type="radio" name="keep_location" value="outdoors" required>
+        <label for="outdoors">Keeping dogs outdoors.</label><br><br>
+
+        <label for="number of pets">Current number of pets</label>
+        <input type="number" name="number_of_pets" id="number_of_pets" min="0" max="100" required><br><br>
+
+        <input type="checkbox" id="agreement" name="agreement" required>
+        <label for="agreement">การส่งแบบฟอร์มนี้เป็นการแจ้งความสนใจ โดยไม่รับรองการได้รับอุปการะสุนัข</label><br><br>
+        <br><br>
+        <button   type="submit"  style="
+        background-color:#28a745; 
+                color: white; 
+                padding: 15px 30px; 
+                text-decoration: none; 
+                font-size: 24px; 
+                border-radius: 1.5cm; 
+                display: inline-block;
+                font-family: cursive;
+                border: 0.2cm solid greenyellow;">Submit</button>
+        <br><br>
+
+        <div id="successPopup" class="popup-overlay">
+            <div class="popup-box">
+                <h2 style="color: #28a745; margin-top: 0;">ส่งข้อมูลสำเร็จ! 🎉</h2>
+                <p>ขอบคุณที่สนใจรับอุปการะน้องหมานะครับ เจ้าหน้าที่จะติดต่อกลับไปเร็วๆ นี้ครับ 🐶</p>
+                <button type="button" class="popup-btn" onclick="closePopup()">ตกลง</button>
+            </div>
+        </div>
+        <script>
+            function showPopup(event) {
+                event.preventDefault(); // ป้องกันหน้าเว็บโหลดใหม่
+                document.getElementById("successPopup").style.display = "block";
+            }
+            function closePopup() {
+                document.getElementById("successPopup").style.display = "none";
+            }
+        </script>
+    </form>
+    <p style="color: blue;">Student ID: 6833258021 <br> Full name: suphachok Chosanthia</p>
+</body>
+
+</html>
